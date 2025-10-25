@@ -19,38 +19,35 @@ namespace NMediation.Dependencies
         /// <param name="assemblies">A collection of <see cref="Assembly"/> to register from.</param>
         public static void AddNMediation(this IServiceCollection services, params Assembly[] assemblies)
         {
+            if (assemblies.Length == 0)
+            {
+                throw new ArgumentNullException(nameof(assemblies), "No assemblies were provided to register.");
+            }
+
             services.AddTransient<IMediation, Mediation>();
 
             foreach (var assembly in assemblies)
             {
-                assembly.GetTypes()
-                    .Where(type => !type.IsAbstract && !type.IsInterface)
-                    .Where(type => type.GetInterfaces().Any(interfaceType => interfaceType.IsGenericType && interfaceType.GetGenericTypeDefinition() == typeof(IPayloadHandler<,>)))
-                    .ToList()
-                    .ForEach(implementationType =>
-                    {
-                        var interfaceType = implementationType.GetInterfaces().FirstOrDefault(type => type.GetGenericTypeDefinition() == typeof(IPayloadHandler<,>));
-
-                        if (interfaceType != null)
-                        {
-                            services.AddTransient(interfaceType, implementationType);
-                        }
-                    });
-
-                assembly.GetTypes()
-                    .Where(type => !type.IsAbstract && !type.IsInterface)
-                    .Where(type => type.GetInterfaces().Any(interfaceType => interfaceType.IsGenericType && interfaceType.GetGenericTypeDefinition() == typeof(IOccurrenceHandler<>)))
-                    .ToList()
-                    .ForEach(implementationType =>
-                    {
-                        var interfaceType = implementationType.GetInterfaces().FirstOrDefault(type => type.GetGenericTypeDefinition() == typeof(IOccurrenceHandler<>));
-
-                        if (interfaceType != null)
-                        {
-                            services.AddTransient(interfaceType, implementationType);
-                        }
-                    });
+                RegisterTypes(assembly, services, typeof(IPayloadHandler<,>));
+                RegisterTypes(assembly, services, typeof(IOccurrenceHandler<>));
             }
+        }
+
+        private static void RegisterTypes(Assembly assembly, IServiceCollection services, Type handlerType)
+        {
+            assembly.GetTypes()
+                .Where(type => !type.IsAbstract && !type.IsInterface)
+                .Where(type => type.GetInterfaces().Any(interfaceType => interfaceType.IsGenericType && interfaceType.GetGenericTypeDefinition() == handlerType))
+                .ToList()
+                .ForEach(implementationType =>
+                {
+                    var interfaceType = implementationType.GetInterfaces().FirstOrDefault(type => type.GetGenericTypeDefinition() == handlerType);
+
+                    if (interfaceType != null)
+                    {
+                        services.AddTransient(interfaceType, implementationType);
+                    }
+                });
         }
     }
 }

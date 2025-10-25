@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace NMediation.Dependencies
 {
     /// <inheritdoc />
-    internal class PayloadWrapper<TPayload, TResponse> : IPayloadWrapper<TResponse>
+    internal sealed class PayloadWrapper<TPayload, TResponse> : IPayloadWrapper<TResponse>
         where TPayload : IPayload<TResponse>
     {
         /// <inheritdoc/>
