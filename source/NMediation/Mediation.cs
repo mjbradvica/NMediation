@@ -24,10 +24,13 @@ namespace NMediation
         /// <inheritdoc/>
         public async Task<TResponse> Mediate<TResponse>(IPayload<TResponse> payload, CancellationToken cancellationToken = default)
         {
-            var wrapper = Activator.CreateInstance(typeof(PayloadWrapper<,>).MakeGenericType(payload.GetType(), typeof(TResponse))) as IPayloadWrapper<TResponse>;
+            if (Activator.CreateInstance(typeof(PayloadWrapper<,>).MakeGenericType(payload.GetType(), typeof(TResponse))) is IPayloadWrapper<TResponse> wrapper)
+            {
+                return await wrapper.Execute(payload, _serviceProvider, cancellationToken);
+            }
 
-            // Null is suppressed due to the wrapper always due to generic requirements and a consistent activation type.
-            return await wrapper!.Execute(payload, _serviceProvider, cancellationToken);
+            // Will never hit, but needs to satisfy nullable requirements.
+            throw new ArgumentNullException(nameof(payload), "Handler for the payload could not be found.");
         }
 
         /// <inheritdoc/>
