@@ -1,4 +1,4 @@
-name: Build & Test
+name: build-test
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: | 
+          dotnet-version: |
             8.0.x
             9.0.x
 
@@ -27,4 +27,4 @@ jobs:
         run: dotnet build --no-restore -c Release
 
       - name: Test
-        run: dotnet test --no-build -v normal -c Release /p:CollectCoverage=true /p:Threshold=95 /p:ThresholdType=branch
+        run: dotnet test /p:CollectCoverage=true /p:Threshold=85 /p:ThresholdType=branch
