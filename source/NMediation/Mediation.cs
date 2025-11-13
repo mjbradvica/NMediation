@@ -29,6 +29,7 @@ namespace NMediation
                 return await wrapper.Execute(payload, _serviceProvider, cancellationToken);
             }
 
+            // Will never hit, but needs to satisfy nullable requirements.
             throw new ArgumentNullException(nameof(payload), "Handler for the payload could not be found.");
         }
 
