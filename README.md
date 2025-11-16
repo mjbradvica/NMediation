@@ -8,7 +8,7 @@ Simple, easy mediation and publishing for .NET. Free forever.
 
 ## Overview
 
-NMediaton gives you:
+NMediation gives you:
 
 - :books: Simple and easy API
 - :dash: Fast & Performant
@@ -37,7 +37,7 @@ Install-Package NMediation
 
 ## Contents
 
-NMediation is the simpliest implementation of the Mediator and Observer patterns for the dotnet framework. The library comes with zero excessive features to weight down performance or burden the end-user with unnecessary options.
+NMediation is the simplest implementation of the Mediator and Observer patterns for the Dotnet framework. The library comes with zero excessive features to weight down performance or burden the end-user with unnecessary options.
 
 The entire library consists of a series of interfaces alongside one base class and one type. It is purposely designed to allow a junior developer to learn in 15 minutes.
 
@@ -51,13 +51,13 @@ NMediation has a single line setup to hook itself into the base container.
 services.AddNMedation(Assembly.GetExecutingAssembly());
 ```
 
-> You may pass either a single assembly or a paramterized list.
+> You may pass either a single assembly or a parameterized list.
 
 ### Mediation
 
-Medation involves sending a request object to a single handler and returning a single response or a substitute for void.
+Mediation involves sending a request object to a single handler and returning a single response or a substitute for void.
 
-> It is recommened you always return an indicator to flag either the handler operation was a success or not.
+> It is recommended you always return an indicator to flag either the handler operation was a success or not.
 
 Create a response object for your operation:
 
@@ -78,7 +78,7 @@ public class WeatherRequest : IPayload<WeatherResponse>
 
 As always, you maybe pass whatever metadata is required as a property.
 
-Create a handler for the requst object:
+Create a handler for the request object:
 
 The handler will inherit from the "IPayloadHandler" interface of type T and K, where T is your request type and K is your response type.
 
@@ -128,7 +128,7 @@ public class MyOccurrence : IOccurrence
 }
 ```
 
-The interface is to designate the type to determine which handlers to sent the event to. You may add as much metadata as you require.
+The interface is to designate the type to determine which handlers to send the event to. You may add as much metadata as you require.
 
 Create as many handlers as required to operate on the event.
 
@@ -144,11 +144,10 @@ public class MyOccurrenceHandler : IOccurrenceHandler<MyOccurrence>
 }
 ```
 
-To publish an event, call the "Publish" method on the IMedation interface.
+To publish an event, call the "Publish" method on the IMediation interface.
 
 ```csharp
 var occurrence = new MyOccurrence();
 
 await _medation.Publish(occurrence);
 ```
-
