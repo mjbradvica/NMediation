@@ -3,7 +3,9 @@
 // </copyright>
 
 using Microsoft.Extensions.DependencyInjection;
+using NMediation.Core;
 using NMediation.Dependencies;
+using NMediation.Samples.UpdateWeather;
 using NMediation.Samples.Weather;
 using NMediation.Samples.WeatherEvent;
 using System.Reflection;
@@ -28,6 +30,8 @@ namespace NMediation.Samples
             var provider = service.BuildServiceProvider();
 
             var mediator = provider.GetRequiredService<IMediation>();
+
+            await mediator.Mediate(new UpdateWeatherPayload(), CancellationToken.None);
 
             var result = await mediator.Mediate(new WeatherRequest(), CancellationToken.None);
 

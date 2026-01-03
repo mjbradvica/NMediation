@@ -2,8 +2,9 @@
 // Copyright (c) Simplex Software LLC. All rights reserved.
 // </copyright>
 
-using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using NMediation.Core;
+using System.Reflection;
 
 namespace NMediation.Dependencies
 {

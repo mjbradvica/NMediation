@@ -3,6 +3,7 @@
 // </copyright>
 
 using Microsoft.Extensions.DependencyInjection;
+using NMediation.Core;
 using NMediation.Dependencies;
 using NMediation.Tests.TestHandlers;
 using System.Reflection;

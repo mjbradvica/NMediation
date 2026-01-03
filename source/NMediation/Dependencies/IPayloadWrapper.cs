@@ -2,6 +2,8 @@
 // Copyright (c) Simplex Software LLC. All rights reserved.
 // </copyright>
 
+using NMediation.Core;
+
 namespace NMediation.Dependencies
 {
     /// <summary>

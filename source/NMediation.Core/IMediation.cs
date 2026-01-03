@@ -2,7 +2,7 @@
 // Copyright (c) Simplex Software LLC. All rights reserved.
 // </copyright>
 
-namespace NMediation
+namespace NMediation.Core
 {
     /// <summary>
     /// Interface that allows for mediation operations.
