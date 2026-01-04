@@ -2,7 +2,7 @@
 // Copyright (c) Simplex Software LLC. All rights reserved.
 // </copyright>
 
-using NMediation.Core;
+using NMediation.Abstractions;
 
 namespace NMediation.Samples.UpdateWeather
 {

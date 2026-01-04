@@ -3,7 +3,7 @@
 // </copyright>
 
 using Microsoft.Extensions.DependencyInjection;
-using NMediation.Core;
+using NMediation.Abstractions;
 using NMediation.Dependencies;
 using NMediation.Samples.UpdateWeather;
 using NMediation.Samples.Weather;

@@ -2,7 +2,7 @@
 // Copyright (c) Simplex Software LLC. All rights reserved.
 // </copyright>
 
-namespace NMediation.Core
+namespace NMediation.Abstractions
 {
     /// <summary>
     /// A class representing a void response.

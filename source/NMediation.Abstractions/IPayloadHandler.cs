@@ -2,7 +2,7 @@
 // Copyright (c) Simplex Software LLC. All rights reserved.
 // </copyright>
 
-namespace NMediation.Core
+namespace NMediation.Abstractions
 {
     /// <summary>
     /// Designates a handler for a payload that returns a response object.

@@ -5,7 +5,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NMediation.Core\NMediation.Core.csproj" />
+    <ProjectReference Include="..\NMediation.Abstractions\NMediation.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
