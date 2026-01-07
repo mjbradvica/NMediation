@@ -2,9 +2,7 @@
 // Copyright (c) Simplex Software LLC. All rights reserved.
 // </copyright>
 
-using NMediation.Abstractions;
-
-namespace NMediation.Samples.BaseHandler
+namespace NMediation.Abstractions
 {
     /// <inheritdoc />
     public abstract class BaseProcessingHandler<TPayload, TResponse> : IPayloadHandler<TPayload, TResponse>
@@ -13,7 +11,7 @@ namespace NMediation.Samples.BaseHandler
         /// <inheritdoc/>
         public virtual async Task<TResponse> Handle(TPayload payload, CancellationToken cancellationToken)
         {
-            var updatedPayload = await Preprocessing(payload, cancellationToken);
+            var updatedPayload = await PreProcessing(payload, cancellationToken);
 
             var response = await DoWork(updatedPayload, cancellationToken);
 
@@ -26,7 +24,7 @@ namespace NMediation.Samples.BaseHandler
         /// <param name="payload">An instance of the <see cref="TPayload"/> object.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/>.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        protected abstract Task<TPayload> Preprocessing(TPayload payload, CancellationToken cancellationToken);
+        protected abstract Task<TPayload> PreProcessing(TPayload payload, CancellationToken cancellationToken);
 
         /// <summary>
         /// Executes the core functionality of the handler.
