@@ -1,5 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+    <Title>NMediation</Title>
+    <Authors>Michael Bradvica</Authors>
+    <Company>Simplex Software LLC.</Company>
+    <Description>An implementation of the Mediator and Event patterns for .NET.</Description>
+	  <Copyright>Copyright 2026. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/mjbradvica/NMediation</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/mjbradvica/NMediation</RepositoryUrl>
+    <PackageTags>mediator, event, desgin-patterns</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>logo.png</PackageIcon>
+    <Version>0.9.0</Version>
+
+    <ItemGroup>
+    <None Include="..\..\images\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.1" />
   </ItemGroup>
