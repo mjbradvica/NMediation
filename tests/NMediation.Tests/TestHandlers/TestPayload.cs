@@ -9,5 +9,9 @@ namespace NMediation.Tests.TestHandlers
     /// <inheritdoc />
     internal class TestPayload : IPayload<string>
     {
+        /// <summary>
+        /// Gets or sets the initial payload value.
+        /// </summary>
+        public string Initial { get; set; } = string.Empty;
     }
 }

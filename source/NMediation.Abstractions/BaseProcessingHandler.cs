@@ -21,7 +21,7 @@ namespace NMediation.Abstractions
         /// <summary>
         /// Executes any pre-processing functionality before the handler main job.
         /// </summary>
-        /// <param name="payload">An instance of the <see cref="TPayload"/> object.</param>
+        /// <param name="payload">An instance of the payload object.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/>.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         protected abstract Task<TPayload> PreProcessing(TPayload payload, CancellationToken cancellationToken);
@@ -29,7 +29,7 @@ namespace NMediation.Abstractions
         /// <summary>
         /// Executes the core functionality of the handler.
         /// </summary>
-        /// <param name="payload">An instance of the <see cref="TPayload"/> object.</param>
+        /// <param name="payload">An instance of the payload object.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/>.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         protected abstract Task<TResponse> DoWork(TPayload payload, CancellationToken cancellationToken);
@@ -37,7 +37,7 @@ namespace NMediation.Abstractions
         /// <summary>
         /// Executes the post-processing functionality after the handler main job.
         /// </summary>
-        /// <param name="response">An instance of the <see cref="TResponse"/> object.</param>
+        /// <param name="response">An instance of the response object.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/>.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         protected abstract Task<TResponse> PostProcessing(TResponse response, CancellationToken cancellationToken);

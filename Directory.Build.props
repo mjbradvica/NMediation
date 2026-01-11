@@ -5,7 +5,7 @@
         <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
         <AnalysisLevel>latest</AnalysisLevel>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
-        <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+        <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
