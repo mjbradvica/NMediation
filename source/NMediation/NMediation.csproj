@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
     <Title>NMediation</Title>
     <Authors>Michael Bradvica</Authors>
     <Company>Simplex Software LLC.</Company>
@@ -12,6 +13,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>logo.png</PackageIcon>
     <Version>0.9.0</Version>
+  </PropertyGroup>
 
     <ItemGroup>
     <None Include="..\..\images\logo.png">
