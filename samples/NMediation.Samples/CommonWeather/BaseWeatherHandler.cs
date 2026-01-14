@@ -3,29 +3,22 @@
 // </copyright>
 
 using NMediation.Abstractions;
-using NMediation.Samples.Weather;
 
 namespace NMediation.Samples.CommonWeather
 {
     /// <inheritdoc />
-    public class BaseWeatherHandler : BaseProcessingHandler<WeatherRequest, WeatherResponse>
+    public abstract class BaseWeatherHandler : BaseProcessingHandler<GetWeatherRequest, string>
     {
         /// <inheritdoc/>
-        protected override Task<WeatherRequest> PreProcessing(WeatherRequest payload, CancellationToken cancellationToken)
+        protected override Task<GetWeatherRequest> PreProcessing(GetWeatherRequest payload, CancellationToken cancellationToken)
         {
             return Task.FromResult(payload);
         }
 
         /// <inheritdoc/>
-        protected override Task<WeatherResponse> DoWork(WeatherRequest payload, CancellationToken cancellationToken)
+        protected override Task<string> PostProcessing(string response, CancellationToken cancellationToken)
         {
-            return Task.FromResult(new WeatherResponse());
-        }
-
-        /// <inheritdoc/>
-        protected override Task<WeatherResponse> PostProcessing(WeatherResponse response, CancellationToken cancellationToken)
-        {
-            return Task.FromResult(new WeatherResponse());
+            return Task.FromResult(response);
         }
     }
 }

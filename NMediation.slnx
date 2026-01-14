@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="samples/NMediation.Samples/NMediation.Samples.csproj" />
+  <Project Path="source/NMediation.Abstractions/NMediation.Abstractions.csproj" />
+  <Project Path="source/NMediation/NMediation.csproj" />
+  <Project Path="tests/NMediation.Tests/NMediation.Tests.csproj" />
+</Solution>

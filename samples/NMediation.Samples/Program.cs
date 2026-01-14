@@ -5,6 +5,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using NMediation.Abstractions;
 using NMediation.Dependencies;
+using NMediation.Samples.CommonWeather;
 using NMediation.Samples.UpdateWeather;
 using NMediation.Samples.Weather;
 using NMediation.Samples.WeatherEvent;
@@ -32,6 +33,8 @@ namespace NMediation.Samples
             var mediator = provider.GetRequiredService<IMediation>();
 
             await mediator.Mediate(new UpdateWeatherPayload(), CancellationToken.None);
+
+            await mediator.Mediate(new GetWeatherRequest(), CancellationToken.None);
 
             var result = await mediator.Mediate(new WeatherRequest(), CancellationToken.None);
 
