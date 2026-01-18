@@ -1,3 +1,4 @@
 {
-  "files": ["../**/*.csproj"]
+  "files": ["../**/*.csproj"],
+  "words": ["NMediation"]
 }

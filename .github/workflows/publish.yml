@@ -32,4 +32,4 @@ jobs:
         run: dotnet pack --no-build -c Release -o .
 
       - name: Publish
-        run: dotnet nuget push NMediation.Abstractions.*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_KEY }} --skip-duplicate
+        run: dotnet nuget push NMediation.*.*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_KEY }} --skip-duplicate
