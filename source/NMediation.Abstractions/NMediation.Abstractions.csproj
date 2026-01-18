@@ -10,7 +10,7 @@
     <PackageProjectUrl>https://github.com/mjbradvica/NMediation</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/mjbradvica/NMediation</RepositoryUrl>
-    <PackageTags>mediator, event, desgin-patterns</PackageTags>
+    <PackageTags>mediator, event, design-patterns</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>logo.png</PackageIcon>
     <Version>0.9.0</Version>
