@@ -200,7 +200,7 @@ public abstract class BaseLoggingHandler : BaseProcessingHandler<WeatherRequest,
         return Task.FromResult(payload);
     }
 
-    protected override Task<WeatherResponse> DoWork(WeatherRequest payload, CancellationToken cancellationToken);
+    protected abstract Task<WeatherResponse> DoWork(WeatherRequest payload, CancellationToken cancellationToken);
 
     protected override Task<WeatherResponse> PostProcessing(WeatherResponse response, CancellationToken cancellationToken)
     {
@@ -248,6 +248,40 @@ public abstract class BaseGenericHandler<TRequest, TResponse> : BaseProcessingHa
 }
 ```
 
+### Specific Pre- and Post-Processing handlers
+
+There are also two extra base handlers will perform only pre- or post-processing operations.
+
+```csharp
+public abstract class MyPreProcessingHandler : BasePreProcessingHandler<TRequest, TResponse>
+{
+    protected override Task<TRequest> PreProcessing(TRequest payload, CancellationToken cancellationToken)
+    {
+        // Implement method and return payload.
+    }
+}
+```
+
+```csharp
+public abstract class MyPostProcessingHandler : BasePostProcessingHandler<TRequest, TResponse>
+{
+    protected override Task<TResponse> PostProcessing(TResponse response, CancellationToken cancellationToken)
+    {
+        // Implment method and return response.
+    }
+}
+```
+
+### Cancellation Token Support
+
+You may pass a Cancellation token if you desire to either Mediation function, which will chain down to any handler.
+
+```csharp
+var response = await _medation.Mediate(request, cancellationToken);
+
+await _medation.Publish(occurrence, cancellationToken);
+```
+
 ## FAQ
 
 ### Do I need NMediation?
@@ -262,11 +296,11 @@ No! NMediation is 100% free forever. It uses the open source MIT license.
 
 ### What are the main difference between NMediation and MediatR?
 
-NMedation has simpler setup.
-NMedation is blazing fast, with no excess ceremony.
-NMedation only allows for fully typed contracts, no blank objects.
-NMedation is free.
-NMedation is easier to debug pre- and post-processing because it uses base classes for those operations.
+- NMediation has simpler setup.
+- NMediation is blazing fast, with no excess ceremony.
+- NMediation only allows for fully typed contracts, no blank objects.
+- NMediation is free.
+- NMediation is easier to debug pre- and post-processing because it uses base classes for those operations.
 
 ### Is it hard to transition over to NMediation?
 
