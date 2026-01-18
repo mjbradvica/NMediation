@@ -4,7 +4,7 @@ Simple, easy mediation and publishing for dotnet.
 
 ![TempIcon](https://i.imgur.com/hJSXnqi.png)
 
-![build-status](https://github.com/mjbradvica/NMediation/workflows/build-test/badge.svg) ![downloads](https://img.shields.io/nuget/dt/NMediation) ![downloads](https://img.shields.io/nuget/v/NMediation) ![activity](https://img.shields.io/github/last-commit/mjbradvica/NMediation/master)
+![build-status](https://github.com/mjbradvica/NMediation/workflows/build-test/badge.svg) ![downloads](https://img.shields.io/nuget/dt/NMediation) ![nuget](https://img.shields.io/nuget/v/NMediation) ![activity](https://img.shields.io/github/last-commit/mjbradvica/NMediation/master)
 
 ## Overview
 
@@ -29,7 +29,9 @@ NMediation gives you:
     - [Mediation](#mediation)
     - [Publishing](#publishing)
   - [Detailed Usage](#detailed-usage)
-    - [Pre- and post-processing handlers](#pre--and-post-processing-handlers)
+    - [Pre- and Post-processing handlers](#pre--and-post-processing-handlers)
+    - [Specific Pre- and Post-Processing handlers](#specific-pre--and-post-processing-handlers)
+    - [Cancellation Token Support](#cancellation-token-support)
   - [FAQ](#faq)
 
 ## Samples
@@ -50,7 +52,7 @@ Install where you need with:
 Install-Package NMediation
 ```
 
-If you want to install just the base interface without the single dependency in certain projects.
+If you want to install just the base interfaces without the single dependency in certain projects.
 
 ```bash
 Install-Package NMediation.Abstractions
@@ -58,7 +60,7 @@ Install-Package NMediation.Abstractions
 
 ## Contents
 
-NMediation is the simplest implementation of the Mediator and Observer patterns for the dotnet framework. The library comes with zero excessive features to weight down performance or burden the end-user with unnecessary options.
+NMediation is the simplest implementation of the Mediator and Observer patterns for the dotnet framework. The library comes with zero excessive features to weigh down performance or burden the end-user with unnecessary options.
 
 The entire library consists of a series of interfaces alongside one base class and one type. It is purposely designed to allow a junior developer to learn in 15 minutes.
 
@@ -72,7 +74,11 @@ NMediation has a single line setup to hook itself into the base DI container.
 services.AddNMedation(Assembly.GetExecutingAssembly());
 ```
 
-> You may pass either a single assembly or a parameterized list.
+...or if you have multiple projects to register, use the params argument.
+
+```csharp
+services.AddNMedation(Assembly.GetExecutingAssembly(), Assembly.Load("OtherAssembly"));
+```
 
 ### Mediation
 

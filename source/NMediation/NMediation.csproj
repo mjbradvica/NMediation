@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Title>NMediation</Title>
     <Authors>Michael Bradvica</Authors>
     <Company>Simplex Software LLC.</Company>
     <Description>An implementation of the Mediator and Event patterns for .NET.</Description>
-	  <Copyright>Copyright 2026. All rights reserved.</Copyright>
+	  <Copyright>Copyright (c) Simplex Software LLC 2026. All rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/mjbradvica/NMediation</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/mjbradvica/NMediation</RepositoryUrl>
