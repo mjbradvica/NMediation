@@ -1,10 +1,8 @@
-name: build-test
+name: publish
 
 on:
   push:
-    branches-ignore:
-      - master
-  pull_request:
+    branches: [master]
 
 jobs:
   build:
@@ -29,3 +27,9 @@ jobs:
 
       - name: Test
         run: dotnet test /p:CollectCoverage=true /p:Threshold=85 /p:ThresholdType=branch
+
+      - name: Pack
+        run: dotnet pack --no-build -c Release -o .
+
+      - name: Publish
+        run: dotnet nuget push NMediation.Abstractions.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_KEY }} --skip-duplicate

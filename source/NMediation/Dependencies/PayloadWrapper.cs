@@ -3,6 +3,7 @@
 // </copyright>
 
 using Microsoft.Extensions.DependencyInjection;
+using NMediation.Abstractions;
 
 namespace NMediation.Dependencies
 {

@@ -1,0 +1,25 @@
+﻿// <copyright file="TestBasePostProcessor.cs" company="Simplex Software LLC">
+// Copyright (c) Simplex Software LLC. All rights reserved.
+// </copyright>
+
+using NMediation.Abstractions;
+using NMediation.Tests.TestHandlers;
+
+namespace NMediation.Tests.BaseHandlers
+{
+    /// <inheritdoc />
+    public class TestBasePostProcessor : BasePostProcessingHandler<TestPayload, string>
+    {
+        /// <inheritdoc/>
+        protected override Task<string> DoWork(TestPayload payload, CancellationToken cancellationToken)
+        {
+            return Task.FromResult(payload.Initial + " DoWork");
+        }
+
+        /// <inheritdoc/>
+        protected override Task<string> PostProcessing(string response, CancellationToken cancellationToken)
+        {
+            return Task.FromResult(response + " PostProcessing");
+        }
+    }
+}
