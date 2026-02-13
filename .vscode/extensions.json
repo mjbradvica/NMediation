@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "unifiedjs.vscode-mdx",
+    "davidanson.vscode-markdownlint",
+    "znck.grammarly",
+    "editorconfig.editorconfig",
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker",
+    "github.vscode-github-actions",
+    "pkief.material-icon-theme",
+    "ms-dotnettools.csdevkit"
+  ]
+}
