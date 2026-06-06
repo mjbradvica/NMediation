@@ -7,7 +7,7 @@ using NMediation.Abstractions;
 namespace NMediation.Tests.TestHandlers
 {
     /// <inheritdoc />
-    internal class TestOccurrenceHandler : IOccurrenceHandler<TestOccurrence>
+    internal sealed class TestOccurrenceHandler : IOccurrenceHandler<TestOccurrence>
     {
         /// <inheritdoc/>
         public Task Handle(TestOccurrence occurrence, CancellationToken cancellationToken)

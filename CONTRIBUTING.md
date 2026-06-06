@@ -100,5 +100,4 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/mjbrad
 - **Describe the current behavior** and **explain which behavior you expected to see instead** and why. At this point you can also tell which alternatives do not work for you.
 - **Explain why this enhancement would be useful** to most NMediation users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
 
-
 This guide is based on the [contributing.md](https://contributing.md/generator)!

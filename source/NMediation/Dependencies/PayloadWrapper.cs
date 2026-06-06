@@ -18,7 +18,7 @@ namespace NMediation.Dependencies
 
             if (handler == null)
             {
-                throw new NullReferenceException("Handler was null.");
+                throw new ArgumentNullException(nameof(payload), "The handler for the payload was not found.");
             }
 
             return await handler.Handle((TPayload)payload, cancellationToken);

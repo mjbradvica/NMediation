@@ -30,7 +30,7 @@ namespace NMediation.Tests
         /// No assemblies pass to registration throws an exception.
         /// </summary>
         [TestMethod]
-        public void AddNMediation_NoAssemblies_ThrowsException()
+        public void AddNMediationNoAssembliesThrowsException()
         {
             Assert.Throws<ArgumentNullException>(() => _serviceCollection.AddNMediation());
         }
@@ -39,7 +39,7 @@ namespace NMediation.Tests
         /// Ensures all dependencies are registered correctly.
         /// </summary>
         [TestMethod]
-        public void AddNMediation_RegistersHandlers()
+        public void AddNMediationRegistersHandlers()
         {
             _serviceCollection.AddNMediation(Assembly.GetExecutingAssembly());
 
@@ -55,7 +55,7 @@ namespace NMediation.Tests
         /// </summary>
         /// <returns>A <see cref="Task"/> representing the asynchronous unit test.</returns>
         [TestMethod]
-        public async Task Mediation_CanInstantiatePayloadHandler()
+        public async Task MediationCanInstantiatePayloadHandler()
         {
             _serviceCollection.AddNMediation(Assembly.GetExecutingAssembly());
 
@@ -73,7 +73,7 @@ namespace NMediation.Tests
         /// </summary>
         /// <returns>A <see cref="Task"/> representing the asynchronous unit test.</returns>
         [TestMethod]
-        public async Task Mediation_CanInstantiateOccurrenceHandler()
+        public async Task MediationCanInstantiateOccurrenceHandler()
         {
             _serviceCollection.AddNMediation(Assembly.GetExecutingAssembly());
 
@@ -89,7 +89,7 @@ namespace NMediation.Tests
         /// </summary>
         /// <returns>A <see cref="Task"/> representing the asynchronous unit test.</returns>
         [TestMethod]
-        public async Task Mediation_NoHandlersDefines_ThrowsException()
+        public async Task MediationNoHandlersDefinesThrowsException()
         {
             _serviceCollection.AddNMediation(Assembly.GetExecutingAssembly());
 

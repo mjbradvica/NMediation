@@ -8,7 +8,7 @@ using NMediation.Tests.TestHandlers;
 namespace NMediation.Tests.BaseHandlers
 {
     /// <inheritdoc />
-    internal class TestBaseHandler : BaseProcessingHandler<TestPayload, string>
+    internal sealed class TestBaseHandler : BaseProcessingHandler<TestPayload, string>
     {
         /// <inheritdoc/>
         protected override Task<string> DoWork(TestPayload payload, CancellationToken cancellationToken)
