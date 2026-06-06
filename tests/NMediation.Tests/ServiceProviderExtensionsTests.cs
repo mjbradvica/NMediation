@@ -97,7 +97,7 @@ namespace NMediation.Tests
 
             var mediator = provider.GetRequiredService<IMediation>();
 
-            await Assert.ThrowsAsync<NullReferenceException>(async () => await mediator.Mediate(new MissingHandlerRequest(), CancellationToken.None));
+            await Assert.ThrowsAsync<ArgumentNullException>(async () => await mediator.Mediate(new MissingHandlerRequest(), CancellationToken.None));
         }
     }
 }
