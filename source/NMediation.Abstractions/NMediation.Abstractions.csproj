@@ -13,7 +13,7 @@
     <PackageTags>mediator, event, design-patterns</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>logo.png</PackageIcon>
-    <Version>0.9.2</Version>
+    <Version>0.9.3</Version>
   </PropertyGroup>
 
     <ItemGroup>
