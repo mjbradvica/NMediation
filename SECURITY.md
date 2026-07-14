@@ -7,6 +7,7 @@ The current versions are supported; NMediation follows Microsoft's policy.
 | Version | Dotnet | Supported          |
 | ------- | ------ | ------------------ |
 | 1.x.x   | 8/9/10 | :white_check_mark: |
+| 0.9.x   | 8/9/10 | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
