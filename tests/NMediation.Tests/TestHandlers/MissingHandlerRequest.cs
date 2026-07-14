@@ -7,7 +7,7 @@ using NMediation.Abstractions;
 namespace NMediation.Tests.TestHandlers
 {
     /// <inheritdoc />
-    internal class MissingHandlerRequest : IEmptyPayload
+    internal sealed class MissingHandlerRequest : IEmptyPayload
     {
     }
 }

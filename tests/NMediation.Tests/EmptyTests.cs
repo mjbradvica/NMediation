@@ -16,7 +16,7 @@ namespace NMediation.Tests
         /// The instance property of Empty should be null.
         /// </summary>
         [TestMethod]
-        public void Empty_Instance_IsNull()
+        public void EmptyInstanceIsNull()
         {
             var instance = Empty.Instance;
 

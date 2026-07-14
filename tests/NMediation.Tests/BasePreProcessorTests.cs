@@ -19,7 +19,7 @@ namespace NMediation.Tests
         /// </summary>
         /// <returns>A <see cref="Task"/> representing the asynchronous unit test.</returns>
         [TestMethod]
-        public async Task PreProcessing_PerformsAction()
+        public async Task PreProcessingPerformsAction()
         {
             var handler = new TestBasePreProcessor();
 
@@ -33,7 +33,7 @@ namespace NMediation.Tests
         /// </summary>
         /// <returns>A <see cref="Task"/> representing the asynchronous unit test.</returns>
         [TestMethod]
-        public async Task DoWork_PerformsAction()
+        public async Task DoWorkPerformsAction()
         {
             var handler = new TestBasePreProcessor();
 

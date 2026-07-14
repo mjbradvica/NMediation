@@ -7,7 +7,7 @@ using NMediation.Abstractions;
 namespace NMediation.Tests.TestHandlers
 {
     /// <inheritdoc />
-    internal class TestPayloadHandler : IPayloadHandler<TestPayload, string>
+    internal sealed class TestPayloadHandler : IPayloadHandler<TestPayload, string>
     {
         /// <inheritdoc/>
         public Task<string> Handle(TestPayload payload, CancellationToken cancellationToken)
