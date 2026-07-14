@@ -64,14 +64,6 @@ NMediation is the simplest implementation of the Mediator and Observer patterns 
 
 The entire library consists of a series of interfaces alongside one base class and one type. It is purposely designed to allow a junior developer to learn in 15 minutes.
 
-## Versioning
-
-NMediation uses the following versioning:
-
-Major - The major version of NMediation, this almost never changes.
-Minor - Mirrors the current major of dotnet.
-Patch - Mirrors a combination of the current minor and patch of dotnet.
-
 ## Quick Start
 
 ### Setup
